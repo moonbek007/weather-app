@@ -1,0 +1,623 @@
+$main-text-color: white;
+$secondary-text-color: #c8c4eb;
+
+@media screen and (min-width: 976px) {
+  .window {
+    min-width: 90vw;
+    background-color: black;
+    display: flex;
+    padding: 3rem;
+
+    background: rgb(93, 232, 224);
+    background: linear-gradient(
+      180deg,
+      rgba(93, 232, 224, 0.896796218487395) 0%,
+      rgba(91, 73, 237, 1) 100%
+    );
+
+    &__main-window {
+      background-color: rgb(79, 134, 134);
+      width: 70%;
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &__title {
+        position: absolute;
+        top: 3rem;
+        left: 7rem;
+        color: $main-text-color;
+      }
+
+      &__info {
+        position: absolute;
+        bottom: 2rem;
+        left: 6rem;
+        padding: 1rem;
+        color: $main-text-color;
+        display: flex;
+        align-items: center;
+
+        &__temperature {
+          font-size: 6rem;
+          & > sup {
+            font-size: 3rem;
+            position: relative;
+            bottom: 1rem;
+            left: 0.75rem;
+          }
+          margin: 0 1rem;
+        }
+        &__city-and-date {
+          display: flex;
+          flex-direction: column;
+          &__city-name {
+            margin: 0 1rem;
+            font-size: 2.25rem;
+          }
+          &__date {
+            margin: 0 1rem;
+            font-size: 1.25rem;
+          }
+        }
+        &__weather {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          & p {
+            font-size: 1rem;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &__side-panel {
+      background: rgb(24, 110, 154);
+      background: linear-gradient(
+        180deg,
+        rgba(24, 110, 154, 1) 0%,
+        rgba(50, 123, 158, 1) 65%,
+        rgba(165, 164, 170, 0.8155637254901961) 100%
+      );
+      width: 30%;
+      height: 100%;
+
+      &__search-section {
+        position: relative;
+        color: $secondary-text-color;
+
+        &__search-field {
+          width: 70%;
+          color: $secondary-text-color;
+        }
+
+        & > button {
+          background-color: #b7d4e2;
+          position: absolute;
+          right: 0;
+          height: 100%;
+          width: 20%;
+          border-radius: 0;
+        }
+
+        &__search-button {
+          padding: 0.5rem;
+        }
+      }
+
+      &__cities {
+        margin: 1rem 0 2rem;
+        max-height: 310px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          width: 1px;
+        }
+        &__city {
+          & button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.1rem 3rem;
+            color: $secondary-text-color;
+          }
+        }
+      }
+
+      &__weather-details {
+        padding: 0.1rem 3rem;
+
+        &__title {
+          color: $main-text-color;
+          margin: 2rem 0;
+        }
+
+        &__single-detail {
+          display: flex;
+          justify-content: space-between;
+          color: $secondary-text-color;
+
+          & p:nth-child(2) {
+            color: $main-text-color;
+          }
+        }
+      }
+    }
+  }
+
+  .line {
+    height: 1px;
+    background-color: $secondary-text-color;
+    width: 80%;
+    margin: 1rem auto;
+  }
+}
+
+/*
+* 576px to 775px 
+*/
+
+@media screen and (min-width: 576px) and (max-width: 775px) {
+  .window {
+    min-width: 90vw;
+    background-color: black;
+    padding: 1.75rem;
+
+    background: rgb(93, 232, 224);
+    background: linear-gradient(
+      180deg,
+      rgba(93, 232, 224, 0.896796218487395) 0%,
+      rgba(91, 73, 237, 1) 100%
+    );
+
+    &__main-window {
+      height: 30vh;
+      background-color: rgb(79, 134, 134);
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &__title {
+        position: absolute;
+        top: 1rem;
+        left: 2.5rem;
+        color: $main-text-color;
+      }
+
+      &__info {
+        position: absolute;
+        bottom: 0.25rem;
+        left: 1rem;
+        padding: 1rem;
+        color: $main-text-color;
+        display: flex;
+        align-items: center;
+
+        &__temperature {
+          font-size: 3rem;
+          & > sup {
+            font-size: 0.75rem;
+            position: relative;
+            bottom: 0.75rem;
+            left: 0.25rem;
+          }
+          margin: 0 0.25rem;
+        }
+        &__city-and-date {
+          display: flex;
+          flex-direction: column;
+          &__city-name {
+            margin: 0 0.25rem;
+            font-size: 1.5rem;
+          }
+          &__date {
+            margin: 0 0.25rem;
+            font-size: 1rem;
+          }
+        }
+        &__weather {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          & p {
+            font-size: 0.75rem;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &__side-panel {
+      background: rgb(24, 110, 154);
+      background: linear-gradient(
+        180deg,
+        rgba(24, 110, 154, 1) 0%,
+        rgba(50, 123, 158, 1) 65%,
+        rgba(165, 164, 170, 0.8155637254901961) 100%
+      );
+
+      &__search-section {
+        position: relative;
+        color: $secondary-text-color;
+        border-bottom: 1px solid $secondary-text-color;
+        &__search-field {
+          width: 70%;
+          color: $secondary-text-color;
+        }
+
+        & > button {
+          background-color: #b7d4e2;
+          position: absolute;
+          right: 0;
+          height: 100%;
+          width: 20%;
+          border-radius: 0;
+        }
+
+        &__search-button {
+          padding: 0.5rem;
+        }
+      }
+
+      &__cities {
+        margin: 1rem 0 2rem;
+        max-height: 310px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          width: 1px;
+        }
+        &__city {
+          & button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.1rem 3rem;
+            color: $secondary-text-color;
+          }
+        }
+      }
+
+      &__weather-details {
+        padding: 0.1rem 3rem;
+
+        &__title {
+          color: $main-text-color;
+          margin: 2rem 0;
+        }
+
+        &__single-detail {
+          display: flex;
+          justify-content: space-between;
+          color: $secondary-text-color;
+
+          & p:nth-child(2) {
+            color: $main-text-color;
+          }
+        }
+      }
+    }
+  }
+
+  .line {
+    height: 1px;
+    background-color: $secondary-text-color;
+    width: 80%;
+    margin: 1rem auto;
+  }
+}
+
+/*
+* 320px to 575
+*/
+@media screen and (min-width: 320px) and (max-width: 575px) {
+  .window {
+    min-width: 90vw;
+    background-color: black;
+    padding: 0.75rem;
+
+    background: rgb(93, 232, 224);
+    background: linear-gradient(
+      180deg,
+      rgba(93, 232, 224, 0.896796218487395) 0%,
+      rgba(91, 73, 237, 1) 100%
+    );
+
+    &__main-window {
+      height: 30vh;
+      background-color: rgb(79, 134, 134);
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &__title {
+        position: absolute;
+        top: 1rem;
+        left: 2.5rem;
+        color: $main-text-color;
+      }
+
+      &__info {
+        position: absolute;
+        bottom: 0.25rem;
+        left: 1rem;
+        padding: 1rem;
+        color: $main-text-color;
+        display: flex;
+        align-items: center;
+
+        &__temperature {
+          font-size: 3rem;
+          & > sup {
+            font-size: 0.75rem;
+            position: relative;
+            bottom: 0.75rem;
+            left: 0.25rem;
+          }
+          margin: 0 0.25rem;
+        }
+        &__city-and-date {
+          display: flex;
+          flex-direction: column;
+          &__city-name {
+            margin: 0 0.25rem;
+            font-size: 1.5rem;
+          }
+          &__date {
+            margin: 0 0.25rem;
+            font-size: 1rem;
+          }
+        }
+        &__weather {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          & p {
+            font-size: 0.75rem;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &__side-panel {
+      background: rgb(24, 110, 154);
+      background: linear-gradient(
+        180deg,
+        rgba(24, 110, 154, 1) 0%,
+        rgba(50, 123, 158, 1) 65%,
+        rgba(165, 164, 170, 0.8155637254901961) 100%
+      );
+
+      &__search-section {
+        position: relative;
+        color: $secondary-text-color;
+        border-bottom: 1px solid $secondary-text-color;
+        &__search-field {
+          width: 70%;
+          color: $secondary-text-color;
+        }
+
+        & > button {
+          background-color: #b7d4e2;
+          position: absolute;
+          right: 0;
+          height: 100%;
+          width: 20%;
+          border-radius: 0;
+        }
+
+        &__search-button {
+          padding: 0.5rem;
+        }
+      }
+
+      &__cities {
+        margin: 1rem 0 2rem;
+        max-height: 310px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          width: 1px;
+        }
+        &__city {
+          & button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.1rem 3rem;
+            color: $secondary-text-color;
+          }
+        }
+      }
+
+      &__weather-details {
+        padding: 0.1rem 3rem;
+
+        &__title {
+          color: $main-text-color;
+          margin: 2rem 0;
+        }
+
+        &__single-detail {
+          display: flex;
+          justify-content: space-between;
+          color: $secondary-text-color;
+
+          & p:nth-child(2) {
+            color: $main-text-color;
+          }
+        }
+      }
+    }
+  }
+
+  .line {
+    height: 1px;
+    background-color: $secondary-text-color;
+    width: 80%;
+    margin: 1rem auto;
+  }
+}
+
+/*
+* 776px to 975px
+*/
+
+@media screen and (min-width: 776px) and (max-width: 975px) {
+  .window {
+    min-width: 90vw;
+    background-color: black;
+    display: flex;
+    padding: 2.25rem;
+
+    background: rgb(93, 232, 224);
+    background: linear-gradient(
+      180deg,
+      rgba(93, 232, 224, 0.896796218487395) 0%,
+      rgba(91, 73, 237, 1) 100%
+    );
+
+    &__main-window {
+      background-color: rgb(79, 134, 134);
+      width: 70%;
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &__title {
+        position: absolute;
+        top: 2rem;
+        left: 3.75rem;
+        color: $main-text-color;
+      }
+
+      &__info {
+        position: absolute;
+        bottom: 1.75rem;
+        left: 2rem;
+        padding: 1rem;
+        color: $main-text-color;
+        display: flex;
+        align-items: center;
+
+        &__temperature {
+          font-size: 4rem;
+          & > sup {
+            font-size: 1.75rem;
+            position: relative;
+            bottom: 1rem;
+            left: 0.75rem;
+          }
+          margin: 0 1rem;
+        }
+        &__city-and-date {
+          display: flex;
+          flex-direction: column;
+          &__city-name {
+            margin: 0 0.75rem;
+            font-size: 2rem;
+          }
+          &__date {
+            margin: 0 0.75rem;
+            font-size: 1rem;
+          }
+        }
+        &__weather {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          & p {
+            font-size: 0.75rem;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &__side-panel {
+      background: rgb(24, 110, 154);
+      background: linear-gradient(
+        180deg,
+        rgba(24, 110, 154, 1) 0%,
+        rgba(50, 123, 158, 1) 65%,
+        rgba(165, 164, 170, 0.8155637254901961) 100%
+      );
+      width: 30%;
+      height: 100%;
+
+      &__search-section {
+        position: relative;
+        color: $secondary-text-color;
+
+        &__search-field {
+          width: 70%;
+          color: $secondary-text-color;
+        }
+
+        & > button {
+          background-color: #b7d4e2;
+          position: absolute;
+          right: 0;
+          height: 100%;
+          width: 20%;
+          border-radius: 0;
+        }
+
+        &__search-button {
+          padding: 0.5rem;
+        }
+      }
+
+      &__cities {
+        margin: 1rem 0 2rem;
+        max-height: 310px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+          width: 1px;
+        }
+        &__city {
+          & button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.1rem 3rem;
+            color: $secondary-text-color;
+          }
+        }
+      }
+
+      &__weather-details {
+        padding: 0.1rem 3rem;
+
+        &__title {
+          color: $main-text-color;
+          margin: 2rem 0;
+        }
+
+        &__single-detail {
+          display: flex;
+          justify-content: space-between;
+          color: $secondary-text-color;
+
+          & p:nth-child(2) {
+            color: $main-text-color;
+          }
+        }
+      }
+    }
+  }
+
+  .line {
+    height: 1px;
+    background-color: $secondary-text-color;
+    width: 80%;
+    margin: 1rem auto;
+  }
+}
